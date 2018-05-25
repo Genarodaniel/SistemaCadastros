@@ -20,6 +20,7 @@ public class Dados {
     public static List <Object> listaContasAreceber = new ArrayList<>();
     public static List <BalancoEstoque> listaEstoque = new ArrayList<>();
     public static List <BalancoProdutos> listaVendasProdutos = new ArrayList<>();
+    public static List <BalancoMP> listaVendasMP = new ArrayList <>();
     
     
     

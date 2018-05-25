@@ -30,6 +30,20 @@ public class Busca {
        }
             return null; 
      }
+    
+    public static List<Venda> buscarVendaPorPagamento(String meio){
+        List <Venda> resultado =new ArrayList<>();
+        
+        for(Venda e : Dados.listaVendas){
+            if(!e.getMeioPagamento().equalsIgnoreCase(meio)){
+                
+            }else{resultado.add(e);
+            } 
+        }
+        
+        return resultado;
+        
+    }
    
     public static List<Compra> buscarCompraDeProdutosPorFornecedor(int codigo) {
    List<Compra> resultado = new ArrayList<>();
@@ -68,6 +82,49 @@ public class Busca {
   }
   return resultado;
 }
+ 
+ public static void buscaVendasMeio(){
+     String meio;
+         String meioConvertido = null;
+        for (Venda c : Dados.listaVendas) {
+            meio=c.getMeioPagamento();
+            List <Venda> lista =Busca.buscarVendaPorPagamento(meio);
+            
+            if(meio.equalsIgnoreCase("C")){
+                meioConvertido = "Cartão de Crédito";
+            }else
+            if(meio.equalsIgnoreCase("P")){
+                meioConvertido ="Pagamento posterior";
+            }else
+                
+            if(meio.equalsIgnoreCase("$")){
+                meioConvertido ="Dinheiro";
+            }else
+             if(meio.equalsIgnoreCase("X")){
+                meioConvertido ="Cheque";
+             }else
+            if(meio.equalsIgnoreCase("D")){
+                meioConvertido="Cartão de Débito";
+            }else
+            if(meio.equalsIgnoreCase("T")){
+                 meioConvertido = "Ticket";
+            }
+        
+            
+            BalancoMP o = new BalancoMP(meioConvertido,lista);
+            addMP(o);
+        }
+        System.out.println(Dados.listaVendasMP);
+            
+            
+ }
+ 
+ public static void addMP(BalancoMP obj){
+     if(!Dados.listaVendasMP.contains(obj)){
+         Dados.listaVendasMP.add(obj);
+     }
+    
+ }
    
     public static void buscaVendas(){
          int codigo;
@@ -89,8 +146,6 @@ public class Busca {
 
        
     }
-    
-    
     
     public static List<Venda> buscarVendaDeProdutosPorCliente(int codigo) {
    List<Venda> resultado = new ArrayList<>();
@@ -139,10 +194,7 @@ public class Busca {
   return total;
 }
       
-    
-    
-    
-    
+
     public static Produto buscarProduto(int codigo){
         for (Produto p : Dados.listaProdutos){
             if(p.getCodigo() == codigo)
@@ -152,9 +204,7 @@ public class Busca {
         }
         return null;
     }
-   
-            
-    
+
     public static  Cliente buscarClienteVenda(int codigo){
         Iterator it=Dados.listaClientes.iterator();
         Cliente c1 = new Cliente();
@@ -176,8 +226,7 @@ public class Busca {
 
         return null ;
     }
-    
-    
+
     public static  Cliente buscarCliente(int codigo){
         Iterator it=Dados.listaClientes.iterator();
         Cliente c1 = new Cliente();
@@ -197,8 +246,6 @@ public class Busca {
 
         return null ;
     }
-    
-    
     
      public static  Compra buscarCompra(int nota){
         Iterator it=Dados.listaCompras.iterator();

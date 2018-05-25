@@ -23,9 +23,32 @@ public class Relatorio {
         return Dados.listaCompras;
 }
     
+    public void relatorioMP(){
+        
+        Busca.buscaVendasMeio();
+        
+        Iterator it = Dados.listaVendasMP.iterator();
+        
+
+        
+        try{
+            FileOutputStream fos = new FileOutputStream("C:\\Users\\itach\\Desktop\\Relatorios\\RelatorioMP.txt");
+           PrintStream dos = new PrintStream(fos); 
+           
+           while(it.hasNext()){
+           dos.println(it.next());
+           dos.flush();
+           }
+            
+        }
+                catch(Exception e){
+                    System.out.println("Excessao: "+ e);
+            
+        }
+        
+    }
     
-    
-    public void relatorioFornecedor(List<Fornecedor> list){
+    public void relatorioFornecedor(){
          double total;
          int codigo;
          
@@ -62,7 +85,7 @@ public class Relatorio {
     }  
    
     
-    public void relatorioProduto(List<Produto> list){
+    public void relatorioProduto(){
         
         
         Busca.buscaVendas();
@@ -83,12 +106,7 @@ public class Relatorio {
             }
         }
         
-        
-       
-    
-    
-  
-    public void relatorioCliente(List<Cliente> list){
+    public void relatorioCliente(){
          double total;
          int codigo=0;
          
@@ -130,7 +148,7 @@ public class Relatorio {
        
     }  
 
-    public void  GeraRelatorioEstoque(List<Produto> list) {
+    public void  RelatorioEstoque() {
 
         
         Iterator ite = Dados.listaProdutos.iterator();
@@ -170,8 +188,7 @@ public class Relatorio {
        }
             
             }
- 
-       
+    
 public void gravaClientes(List <Cliente> list){
     
      

@@ -289,7 +289,7 @@ public class Importa {
                 String s [];
                 s=(scann.nextLine().split(";"));
                
-                Integer id =Dados.listaVendas.size()+10;
+                Integer id =Dados.listaVendas.size()+1;
                 int codigoC = Integer.parseInt(s[0]);
                 Cliente c = Busca.buscarClienteVenda(codigoC);
                   if(c!=null){
@@ -317,30 +317,34 @@ public class Importa {
                 
                     obj.setMeioPagamento(s[4]);
                     if(obj.getMeioPagamento().equalsIgnoreCase("P")){
-                        if(0==c.getCodigo()) {
-                            System.out.println("Cliente nulo nao cadastrado para venda P");
-                            break;
-                        } else {
+                        if(c.getCodigo()!=0) {
+                            dao.NovaVenda(obj);
+                             break;
                             
                         }
-                        break;
+                        else{
+                            System.out.println("Cliente nulo nao cadastrado para venda P");
+                            break;
                         }
-                       dao.NovaVenda(obj);
-                       break;
+                  
                     }
-                    
+                    else{
+                        dao.NovaVenda(obj);
+                             break;
+                        
+                    }
                   
                  }
-                System.out.println(Dados.listaVendas);
-            
+               
         }
            
         
        
+  
+}
         catch(Exception e){
             System.out.println("Excessao: "+e);
         }
-
 }
 }
 
