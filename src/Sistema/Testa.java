@@ -166,6 +166,9 @@ public class Testa {
                     imp.importaProduto();
                     imp.ImportaVenda();
                     imp.importaCompra();
+                    re.relatorioProduto(Dados.listaProdutos);
+                   
+                    
                     
                     
                    

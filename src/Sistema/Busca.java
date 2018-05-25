@@ -43,7 +43,21 @@ public class Busca {
   return resultado;
 }
     
-       public static List<Venda> buscarVendaDeProdutosPorCodigo(int codigo) {
+    public static List<Compra> buscarCompraDeProdutosPorCodigo(int codigo){
+        List<Compra> resultado = new ArrayList<>();
+        for(Compra cp: listaCompras)
+        {
+            if(cp.getProduto().getCodigo() !=codigo){
+                }else{
+                resultado.add(cp);
+            }
+            
+        }
+    return resultado;
+    
+    }
+    
+ public static List<Venda> buscarVendaDeProdutosPorCodigo(int codigo) {
    List<Venda> resultado = new ArrayList<>();
   for(Venda c: listaVendas) {
     if (c.getProduto().getCodigo() != codigo) {
@@ -55,7 +69,26 @@ public class Busca {
   return resultado;
 }
    
-    
+    public static void buscaVendas(){
+         int codigo;
+         double total=0;
+         Iterator it =Dados.listaProdutos.iterator();
+       while(it.hasNext()){
+           Produto c =(Produto) it.next();
+           codigo=c.getCodigo();
+           List <Venda> lista =Busca.buscarVendaDeProdutosPorCodigo(codigo);
+           total=calcularLucro(lista);
+           BalancoProdutos o = new BalancoProdutos();
+           o.setProduto(c);
+           o.setList(lista);
+           o.setLucro(total);
+           Dados.listaVendasProdutos.add(o); 
+         
+       
+       }
+
+       
+    }
     
     
     
@@ -83,6 +116,14 @@ public class Busca {
   
   return total;
 }
+    
+    public static double calcularLucro(List <Venda> list){
+        double total = 0;
+        for(Venda e : list){
+            total += (e.getProduto().getPrecoVenda()-e.getProduto().getCusto())*e.getQuantidade();
+        }
+        return total;
+    }
     
   
      public  static double calcularTotalAPagarCliente(Cliente obj) {

@@ -5,6 +5,7 @@
  */
 package Sistema;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author adm
  */
-public class Compra {
+public class Compra implements Serializable {
     private int notaFiscal;
     private Produto produto;
     private String data;

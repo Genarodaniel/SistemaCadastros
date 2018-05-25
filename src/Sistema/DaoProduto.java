@@ -39,23 +39,34 @@ public class DaoProduto {
             }
     public void ExcluirProduto(int codigo){
         
-        while(iterator.hasNext()){
+        Produto p;
+        p= Busca.buscarProduto(codigo);
+        
+        if(Dados.listaProdutos.contains(p)){
             
-            for(Produto lista : Dados.listaProdutos)
-            {
-                if(lista.getCodigo()==  codigo){
-                    Dados.listaProdutos.remove(lista);
-                    System.out.println("Produto nº: "+lista.getCodigo()+" removido com sucesso");
-                    break;
+            List <Venda> list= Busca.buscarVendaDeProdutosPorCodigo(codigo);
+            
+                for(Venda e : list){
+                    Dados.listaVendas.remove(e);
+                    System.out.println("Venda nº: "+e.getId()+" Removida com sucesso(Produto removido)!");
                 }
-           
+                List <Compra> list1 =Busca.buscarCompraDeProdutosPorCodigo(codigo);
                 
-                    System.out.println("Produto nº: "+lista.getCodigo()+" removido com sucesso");
-                  
-                
-            }
-            break;
+                for(Compra x : list1){
+                    
+                    Dados.listaCompras.remove(x);
+                    System.out.println("Compra nf nº: "+ x.getNotaFiscal()+" Removida com sucesso(Produto removido)!");
+                }
+            
+            
+            Dados.listaProdutos.remove(p);
+            System.out.println("Produto nº: "+p.getCodigo()+"Removido com sucesso");
         }
+        else
+        {
+            System.out.println("Produto nº: "+codigo+" Não encontrado");
+        }
+      
     }
     public void EditarProduto(int codigo){
                 

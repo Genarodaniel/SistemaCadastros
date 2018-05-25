@@ -5,13 +5,14 @@
  */
 package Sistema;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author adm
  */
-public class Venda {
+public class Venda implements Serializable {
   
     private Integer id;
     private Cliente cliente;

@@ -16,11 +16,10 @@ public class BalancoProdutos {
     private List<Venda> list;
     private double lucro;
 
-    public BalancoProdutos(Produto produto, List<Venda> list, double lucro) {
-        this.produto = produto;
-        this.list = list;
-        this.lucro = lucro;
+    public BalancoProdutos() {
+      
     }
+    
 
     public Produto getProduto() {
         return produto;
@@ -48,7 +47,8 @@ public class BalancoProdutos {
 
     @Override
     public String toString() {
-        return "BalancoLucros{" + "produto=" + produto + ", list=" + list + ", lucro=" + lucro + '}';
+        return "" + "##################  produto nº " + produto.getCodigo()+" ################## \r\n\r\n" +
+                "################## Vendas   ################## \r\n\r\n" + list + " ################## lucro = " + lucro + "################## \r\n\r\n";
     }
     
     

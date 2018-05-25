@@ -5,11 +5,13 @@
  */
 package Sistema;
 
+import java.io.Serializable;
+
 /**
  *
  * @author adm
  */
-public class Produto {
+public class Produto implements Serializable {
     private int codigo;
     private int estoqueMinimo;
     private int quantidadeEstoque;

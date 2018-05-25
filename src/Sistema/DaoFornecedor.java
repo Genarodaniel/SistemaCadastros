@@ -46,10 +46,8 @@ public void ExcluirFornecedor(int codigo){
             List <Compra> list =Busca.buscarCompraDeProdutosPorFornecedor(codigo);
             
             for(Compra x : list){
-                
-                if(Dados.listaCompras.contains(x)){
-                    Dados.listaCompras.remove(x);
-                }
+            Dados.listaCompras.remove(x);
+                System.out.println("Compra nº :"+x.getNotaFiscal()+" Removida com sucesso(Fornecedor foi removido) !" );
             
             }
                 Dados.listaFornecedores.remove(f);

@@ -46,9 +46,11 @@ public class DaoCliente {
                         List<Venda> list =Busca.buscarVendaDeProdutosPorCliente(codigo);
                         
                         list.forEach((p) -> {
-                            if(Dados.listaVendas.contains(p)){
+                            
                                 Dados.listaVendas.remove(p);
-                            } 
+                                System.out.println("Venda nº: "+p.getId()+"Removida com sucesso(Cliente foi removido)");
+                            
+                            
                             
                             
                });

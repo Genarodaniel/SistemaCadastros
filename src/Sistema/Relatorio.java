@@ -32,12 +32,7 @@ public class Relatorio {
        for(Fornecedor f :Dados.listaFornecedores){
            codigo=f.getCodigo();
            ContaApagar obj  = new ContaApagar();
-      
-             
-             
              total = Busca.calcularTotalAPagarFornecedor(f);
-             
-             
              obj.setFornecedor(f);
              obj.setTotalApagar(total);
              Dados.listaContasApagar.add(obj);
@@ -67,42 +62,31 @@ public class Relatorio {
     }  
    
     
-    public void relatorioProduto(List<Venda> list){
-         double total;
-         int codigo;
-         
-       for(Produto c :Dados.listaProdutos){
-           codigo=c.getCodigo();
-           List <Venda> lista =Busca.buscarVendaDeProdutosPorCodigo(codigo);
-           
-           for(Venda e : lista){
-               Dados.listaVendasProdutos.add(e);
-           }
-      }
-       
-            Iterator it = Dados.listaVendasProdutos.iterator();
-            while(it.hasNext()){
-            Venda x =(Venda) it.next();
-            try{ 
-             FileOutputStream fos = new FileOutputStream("C:\\Users\\itach\\Desktop\\Relatorios\\RelatorioProduto.txt",true);
-           PrintStream dos = new PrintStream(fos);
+    public void relatorioProduto(List<Produto> list){
         
-            dos.println(x);
+        
+        Busca.buscaVendas();
+        Iterator it = Dados.listaVendasProdutos.iterator();
+       
             
-            dos.flush();
+            try{
+                System.lineSeparator(); 
+                FileOutputStream fos = new FileOutputStream("C:\\Users\\itach\\Desktop\\Relatorios\\RelatorioProduto.txt");
+                PrintStream dos = new PrintStream(fos);
+               while(it.hasNext()){ 
+                dos.println(it.next());
+               }
+                
+            }
+            catch(Exception e){
+                System.out.println("Excessao : "+e);
+            }
+        }
+        
+        
        
-       
-    }
-           
     
-               catch(Exception e){
-                 System.out.println("Excessao : "+e);
-             }
-             
-       }
     
-       
-    }
   
     public void relatorioCliente(List<Cliente> list){
          double total;
