@@ -17,7 +17,15 @@ import java.util.List;
  *
  * @author adm
  */
+
+// Classe contendo os metodos de seleção e busca nos arraylists do programa.
+
+
 public class Busca {
+    
+    
+    //Percorre a lista de Fornecedores em busca do código passado como parâmetro,
+    // retorna o fornecedor encontrado com aquele código como parâmetro
     
     public static Fornecedor buscarFornecedor(int codigo) {
         
@@ -31,6 +39,11 @@ public class Busca {
             return null; 
      }
     
+    /* Recebe como parametro uma String representando o meio de pagamento, cria um arrayList de vendas
+    local chamado resultado, percorre a lista de vendas e busca pelo meio de pagamento das vendas 
+    uma String igual a passada como parametro e adiciona no arrayList resultado. depois retorna
+    o array com todas as vendas feitas com aquele meio de pagamento
+    */
     public static List<Venda> buscarVendaPorPagamento(String meio){
         List <Venda> resultado =new ArrayList<>();
         
@@ -186,9 +199,9 @@ public class Busca {
 
  
   for(Venda c1: (buscarVendaDeProdutosPorCliente(obj.getCodigo()))) {
-    
+    if(c1.getMeioPagamento().equalsIgnoreCase("P")){
          total += c1.getValoraPagar();
- 
+    }
   }
   
   return total;

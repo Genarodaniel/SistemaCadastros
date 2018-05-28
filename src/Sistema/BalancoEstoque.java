@@ -11,6 +11,10 @@ import java.util.Objects;
  *
  * @author adm
  */
+
+// Classe BalancoEstoque, usada para representar a quantidade atual e minina de um determinado produto
+// instanciada para gerar o relatorio de estoque,tem seu próprio arrayList na Classe Dados.
+
 public class BalancoEstoque  {
     
     private Produto produto;

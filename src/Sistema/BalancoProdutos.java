@@ -11,6 +11,9 @@ import java.util.List;
  *
  * @author adm
  */
+
+// Classe BalancoProdutos, usada para representar as vendas de um determinado produto e o lucro 
+// instanciada para gerar o relatorio de Vendas por produto,tem seu próprio arrayList na Classe Dados.
 public class BalancoProdutos {
     private Produto produto;
     private List<Venda> list;

@@ -12,6 +12,10 @@ import java.util.Objects;
  *
  * @author adm
  */
+
+// Classe Balanco MP, usada para representar as vendas pelo meio de Pagamento
+// é intanciada para gerar o relatorio de vendas por Meio de Pagamento, tem seu próprio arrayList na Classe Dados.
+
 public class BalancoMP {
     private String meioPagamento;
     private List <Venda> vendas;

@@ -165,7 +165,7 @@ public class Testa {
                     imp.importaFornecedor();
                     imp.importaProduto();
                     imp.ImportaVenda();
-                    re.relatorioMP();
+                    re.relatorioCliente();
                   
                    
                    
