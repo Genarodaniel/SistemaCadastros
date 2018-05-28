@@ -13,6 +13,11 @@ import java.util.List;
  *
  * @author adm
  */
+
+// Classe compra representa as compras de produtos dos fornecedores 
+//
+
+
 public class Compra implements Serializable {
     private int notaFiscal;
     private Produto produto;
@@ -22,9 +27,7 @@ public class Compra implements Serializable {
     private double totalApagar;
     
     
-    public List <Produto> getLista(){
-        return Dados.listaProdutos;
-    }
+  
 
     public Compra(int notaFiscal, Produto produto, String data, Fornecedor fornecedor, int quantidade, double totalApagar) {
         this.notaFiscal = notaFiscal;
@@ -46,9 +49,7 @@ public class Compra implements Serializable {
         this.notaFiscal = notaFiscal;
     }
 
-  
 
-    
     public String getData() {
         return data;
     }
@@ -81,6 +82,7 @@ public class Compra implements Serializable {
         this.fornecedor =fornecedor;
     }
 
+   
     public Compra() {
       
     }

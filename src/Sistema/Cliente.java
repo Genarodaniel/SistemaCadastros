@@ -10,6 +10,9 @@ import java.io.*;
  *
  * @author adm
  */
+
+// Classe Cliente representando o cliente ( pessoa fisica ou juridica) 
+
 public class Cliente implements Serializable {
    private  int codigo;
     private String nome;

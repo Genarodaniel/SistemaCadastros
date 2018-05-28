@@ -20,10 +20,7 @@ public class ContaApagar extends Compra {
     private int quantidade;
     private double totalApagar;
     
-    @Override
-    public List <Produto> getLista(){
-        return Dados.listaProdutos;
-    }
+   
 
     public ContaApagar(int notaFiscal, Produto produto, String data, Fornecedor fornecedor, int quantidade, double totalApagar) {
         this.notaFiscal = notaFiscal;

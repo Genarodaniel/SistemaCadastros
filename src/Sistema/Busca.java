@@ -39,7 +39,8 @@ public class Busca {
             return null; 
      }
     
-    /* Recebe como parametro uma String representando o meio de pagamento, cria um arrayList de vendas
+    /* buscarVendaPorPagamento(String meio)
+    Recebe como parametro uma String representando o meio de pagamento, cria um arrayList de vendas
     local chamado resultado, percorre a lista de vendas e busca pelo meio de pagamento das vendas 
     uma String igual a passada como parametro e adiciona no arrayList resultado. depois retorna
     o array com todas as vendas feitas com aquele meio de pagamento
@@ -58,7 +59,8 @@ public class Busca {
         
     }
     
-    /* Recebe como parâmetro um inteiro denominado codigo que representa o código do fornecedor,
+    /* buscarCompraDeProdutosPorFornecedor(int codigo) 
+    Recebe como parâmetro um inteiro denominado codigo que representa o código do fornecedor,
     percorre a lista de compras comparando o código do fornecedor com o código passado como parâmetro,
     se o código for igual,adiciona na lista local aquela compra.
     o método retorna uma lista denominada resultado com as compras do fornecedor como codigo passado.
@@ -76,7 +78,8 @@ public class Busca {
   return resultado;
 }
     
-    /* Recebe como parâmetro um inteiro denominado codigo que representa o código do produto,
+    /* buscarCompraDeProdutosPorCodigo(int codigo)
+    Recebe como parâmetro um inteiro denominado codigo que representa o código do produto,
     percorre a lista de compras comparando o código do Produto com o código passado como parâmetro,
     se o código for igual,adiciona na lista local aquela compra.
     o método retorna uma lista denominada resultado com as compras com o produto de codigo igual
@@ -98,7 +101,8 @@ public class Busca {
     
     }
     
-     /* Recebe como parâmetro um inteiro denominado codigo que representa o código do produto,
+     /* buscarVendaDeProdutosPorCodigo(int codigo)
+    Recebe como parâmetro um inteiro denominado codigo que representa o código do produto,
     percorre a lista de vendas comparando o código do Produto com o código passado como parâmetro,
     se o código for igual,adiciona na lista local aquela venda.
     o método retorna uma lista denominada resultado com as vendas com o produto de codigo

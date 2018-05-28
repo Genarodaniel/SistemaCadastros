@@ -28,7 +28,8 @@ public class BalancoEstoque  {
         this.estoqueMinimo1=estoqueMinimo1;
         this.produto=produto;
     }
-
+    // criação de um segundo construtor vazio para instanciar um objeto sem atributos nos demais metodos
+    // os atributos serao atribuidos via Sets().
     public BalancoEstoque() {
     }
 
